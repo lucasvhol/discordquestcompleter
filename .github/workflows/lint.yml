@@ -1,0 +1,33 @@
+name: Lint
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Check JavaScript syntax
+        run: node -c script.js
+      
+      - name: Validate JSON
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('package.json', 'utf8'))"
+      
+      - name: Check for common issues
+        run: |
+          # Check for console.log statements (just warn, don't fail)
+          if grep -n "console.log" script.js | head -5; then
+            echo "Note: Console logging is expected for user feedback"
+          fi

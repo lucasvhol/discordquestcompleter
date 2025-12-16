@@ -1,0 +1,23 @@
+{
+  "name": "discord-quest-automation",
+  "version": "1.0.0",
+  "description": "Automated Discord Quest completion script",
+  "main": "script.js",
+  "keywords": [
+    "discord",
+    "quests",
+    "automation",
+    "nitro",
+    "userscript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/discord-quest-automation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/discord-quest-automation/issues"
+  },
+  "homepage": "https://github.com/yourusername/discord-quest-automation#readme"
+}
